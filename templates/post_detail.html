@@ -2,9 +2,9 @@
 
 {% load crispy_forms_tags %}
 
-<div class="masthead">
+<div class="col-md-8 offset-md-2">
     <div class="container">
-        <div class="row g-0">
+        <div class="row">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">
@@ -13,17 +13,19 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://pyxis.nymag.com/v1/imgs/d74/27b/7702abdc8a039a96b13eec053c1afca3fc-bic-rollerblades.jpg" width="100%">
-                {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
-                {% endif %}
-            </div>
         </div>
     </div>
 </div>
+
+<div class="col-md-8 offset-md-2">
+    {% if "placeholder" in post.featured_image.url %}
+    <img src="https://pyxis.nymag.com/v1/imgs/d74/27b/7702abdc8a039a96b13eec053c1afca3fc-bic-rollerblades.jpg" width="100%">
+    {% else %}
+    <img src="{{ post.featured_image.url }}" width="100%">
+    {% endif %}
+</div>
+
+
 
 <div class="container">
     <div class="row">
@@ -35,8 +37,23 @@
                 <div class="row">
 
                     <div class="col-1">
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="far fa-thumbs-up"></i> {{ post.number_of_likes }} </strong>
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogspot_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-thumbs-up"></i></button>
+
+                                {% else %}
+
+                                <button type="submit" name="blogspot_id" value="{{post.slug}}" class="btn-like"><i class="far fa-thumbs-up"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far  fa-thumbs-up"></i></span>
+                            {% endif %}
+                        <span class="text-secondary"> {{ post.number_of_likes }} </span>
+                        </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
