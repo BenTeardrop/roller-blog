@@ -120,16 +120,6 @@ class PostLike(View):
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-# class PostDislike(View):
-#     def post(self, request, slug):
-#         post = get_object_or_404(Post, slug=slug)
-
-#         if post.dislikes.filter(id=request.user.id).exists():
-#             post.dislikes.remove(request.user)
-#         else:
-#             post.dislikes.add(request.user)
-#         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
 
 class CreateReview(View):
     def get(self, request, *args, **kwargs):
@@ -140,3 +130,14 @@ class CreateReview(View):
                 "create_review": CreateReview()
             },
         )
+
+# class PostDislike(View):
+#     def post(self, request, slug):
+#         post = get_object_or_404(Post, slug=slug)
+
+#         if post.dislikes.filter(id=request.user.id).exists():
+#             post.dislikes.remove(request.user)
+#         else:
+#             post.dislikes.add(request.user)
+#         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
