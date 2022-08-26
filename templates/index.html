@@ -3,16 +3,17 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-12">
-        <img class="card-img-top" src="https://www.gannett-cdn.com/presto/2022/08/04/USAT/a331028a-368e-41d7-9590-01f23a2afdfe-herosolcotti.PNG?crop=2987,1681,x12,y0&width=2560" alt="">
-        <div class="row">
-            <h1>a Blog about inline skating</h1>
-        </div>
+    <div class="col-md-12">
+        <img class="card-img-top" src="https://www.gannett-cdn.com/presto/2022/08/04/USAT/a331028a-368e-41d7-9590-01f23a2afdfe-herosolcotti.PNG?crop=2987,1681,x12,y0&width=2560" alt="" height="80%">
+        <h2>A Blog for inline skaters to express themselves.</h2>
     </div>
 </div>
 
 <div class="container-fluid">
     <div class="row">
+        <h1>The Blog</h1><br>
+        <h3><a class="create-post" href="{% url 'create_post' %}"><i class="far fa-plus-square"></i> Create Post</i></a>
+        </h3>
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 center">
             <div class="row">
@@ -37,7 +38,8 @@
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on }}</p>
-                            <i class="far fa-thumbs-up">{{ post.number_of_likes }}</i>
+                            <i class="far fa-thumbs-up">{{ post.number_of_likes }} </i>
+                            <i class="far fa-thumbs-down"> {{ post.number_of_dislikes }}</i>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,29 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
+    color: #23a5d2;
+}
+
+
+.nav-link {
     color: #4255ad;
+
+}
+
+.create-post {
+    color: #23a5d2;
+    text-decoration: none;
+}
+
+h1, h3 {
+    display: flex;
+    justify-content: center;
+    color: #23a5d2;
+
+}
+
+h2 {
+    color: #23a5d2
 }
 
 .red-o {
@@ -22,7 +44,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #4255ad;
+    background-color: #23a5d2;
 }
 
 .main-bg {
@@ -71,24 +93,10 @@ body {
     overflow: hidden;
 }
 
-/* .masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100; }
-    */
-
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #4255ad;
 }
 
 .post-link:hover,
@@ -107,14 +115,14 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #47be00;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #47be00;
 }
 
 .link {
