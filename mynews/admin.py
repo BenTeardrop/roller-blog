@@ -29,10 +29,6 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'body', 'post', 'created_on', 'approved')
-    list_filter = ('approved', 'created_on')
-    search_fields = ('name', 'email_address', 'body')
-    actions = ['approve_Review']
-
-    def approve_Review(self, request, queryset):
-        queryset.update(approved=True)
+    list_display = ('name', 'body', 'email', 'created_on', )
+    list_filter = ('created_on',)
+    search_fields = ('name', 'email', 'body',)

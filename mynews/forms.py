@@ -12,7 +12,8 @@ class CreatePostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'content', 'featured_image',)
         
-# class CreateReviewForm(forms.ModelForm):
-#     class Meta:
-#         model = Review
-#         fields = ('title', 'body',)
+class CreateReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('body',)
+
