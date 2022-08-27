@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -16,7 +17,6 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    # dislikes = models.ManyToManyField(User, related_name='blog_dislikes', blank=True)
 
     
 
@@ -29,8 +29,13 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-    # def number_of_dislikes(self):
-    #     return self.dislikes.count()
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
+
+
 
 
 class Comment(models.Model):
