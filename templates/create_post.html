@@ -13,6 +13,15 @@
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>
+            {% else %}
+
+            <div class="alert alert-danger" role="alert">
+            <p>To create a Post</p>
+            <p>please Login</p>
+            <p>or</p> 
+            <p>Register</p> 
+            </div>
+
             {% endif %}
             </div>
         </div>
