@@ -77,45 +77,6 @@ class CreatePost(CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-    # def get(self, request, *args, **kwargs):
-    #     return render(
-    #         request,
-    #         'create_post.html',
-    #         {
-    #             "create_post_form": CreatePostForm()
-    #         },
-    #     )
-
-    # def post(self, request, *args, **kwargs):
-    #     queryset = Post.objects.filter(status=1)
-    #     post = get_object_or_404(queryset)
-    #     comments = post.comments.filter(approved=True).order_by('created_on')
-    #     liked = False
-    #     if  post.likes.filter(id=self.request.user.id).exists():
-    #         liked = True
-    #     post = Post.objects.order_by('created_on')
-    #     post_form = CreatePostForm(data=request.POST)
-
-    #     if post_form.is_valid():
-    #         post_form.instance.email = request.user.email
-    #         post_form.instance.name = request.user.username
-    #         post = post_form.save(commit=False)
-    #         post.save()
-    #     else:
-    #         post_form = CreatePostForm()
-
-
-    #     return render(
-    #         request,
-    #         'post_detail.html',
-    #         {
-    #             "post": post,
-    #             "comments": comments,
-    #             "commented": True,
-    #             "liked": liked,
-    #             "comment_form": CommentForm()
-    #         },
-    #     )
 
 
 class PostLike(View):
@@ -162,9 +123,5 @@ class CreateReview(View):
                 "review_form": review_form
             },
         )
-
-
-
-
 
 

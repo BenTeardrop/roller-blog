@@ -5,7 +5,7 @@
 A blog for inline skaters, big wheels, racing, agressive and everything else iline skating related.
 you can share for example images, ideas and spots to go skate to.
 
-tech used: django
+tech used: django, django summernote, presql.
 
 
 
@@ -22,17 +22,23 @@ live link
 ![navbar]()
 
 1. roller blog logo
-the roller blog logo present on all the pages links you back to the home page
+the roller blog logo present on all the pages and links you back to the home page
 ![logo]()
 2. home
-same as the logo
-3. sign up
-the sign up link apears when the user hasn't signed in and text you to the sign up form
-![signup page]()
+present on all the pages and links you back to the home page
+3. register
+the register link apears when the user hasn't registered or logged in and takes you to the register form
+![register page]()
 4. login
-the login apears only if you haven't logged in
+the login apears only if you haven't logged in or registered
 ![login page]()
-5. reviews 
+5. logout
+the logout only appears on the navbar if the user has logged in
+![logout page]()
+6. Create Post
+redirects you the the create a post page
+![create post page]()
+6. reviews 
 takes you to the reviews page where you can check previous reviews and add your own. As long as you have sign up and logged in
 ![reviews page]()
 
@@ -52,16 +58,20 @@ a button takes you to a page to create a post for the blog
 
 the list of blog posts with a default image with 3 different type of skates
 here 
+features the post title, the post time and date as well as a featured photo that could be chosen by the user*
 ![blog section]()
 ![inline skates](https://pyxis.nymag.com/v1/imgs/d74/27b/7702abdc8a039a96b13eec053c1afca3fc-bic-rollerblades.jpg)
 
 you also have featured in the blog posts the amount of thumbs up people left
+
+and a site pagination set to 5 posts per page to keep it clean and clear
 
 ### blog post detail
 
 ![post detail page]()
 
 each blog post is a link to the post detail page where you can read more about the post, like it with a thumbs up and commment on it as well.
+the user need to be signed in to comment and the comment need to be approved by admin first. 
 
 ### the comment section
 
@@ -91,26 +101,29 @@ i created three models
 
 # Testing
 
-i have manualy tested this project by doing the following
+i have manualy manually and automatically tested this project by doing the following
 
-* 
-* 
-* 
+* automatic testing the create form and review form in **test_form.py**
+* manual testing on links and buttons and pagination.
 
 ## bugs
-
+    several issues with the slug on the create post
+    CreatePost had a conflict
+    *issues wiring up the user photo from the create post form 
 
 
 ### solved bugs
+    added the save function in the model.py to automatically attach the slug to the post title
+    imported the CreateView method following django docs 
+
+
+
 
 ## remaining bugs
+    issues wiring up the image input in the create post form. only available via the admin panel at the moment.
+    i need to figure out how to connect it with the cloudinary database.
 
 ## validator testing
-
-
-
-
-
 
 
 
@@ -140,5 +153,7 @@ this project was deployed using heroku
 * based on the code institute codestar blog
 
 * exerpts from rollernews.com
+
+* then and now rollerblading podcast
 
 

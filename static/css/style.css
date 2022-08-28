@@ -11,7 +11,7 @@ body {
 
 
 .nav-link {
-    color: #4255ad;
+    color: #23a5d2;
 
 }
 
@@ -101,7 +101,7 @@ h2 {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #f82fbe;
 }
 
 .post-title {
@@ -111,10 +111,11 @@ h2 {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: rgb(200, 199, 199);
 }
 
 .btn-signup {
+    margin-top: 10px;
     background-color: #47be00;
     color: #fff;
 }
@@ -144,7 +145,7 @@ h2 {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #1ea317;
+    color: #f82fbe;
     background: transparent;
     border: none;
 }
