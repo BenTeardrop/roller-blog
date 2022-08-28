@@ -9,7 +9,7 @@
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <form action="" method="post" style="margin-top: 1.3em;">
-                {{ create_post_form | crispy }}
+                {{ form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>

@@ -10,7 +10,7 @@ class CommentForm(forms.ModelForm):
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'content', 'featured_image',)
+        fields = ('title', 'content', 'featured_image', 'status')
         
 class CreateReviewForm(forms.ModelForm):
     class Meta:
