@@ -140,6 +140,13 @@ various social links
 
 ![social links](/static/photos/bottom-links.png)
 
+### tasks github templates
+
+    - i have used the agile template on github to follow the tasks needed for the project
+
+
+![github tasks](/static/photos/tasks-templates.png)
+
 
 
 # models
