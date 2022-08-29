@@ -121,6 +121,19 @@ section on the post detail page where you can post comments about the post
 
 ![comment section](/static/photos/comments.png)
 
+### warning messages
+
+    - warning messages when the user hasn't sign in
+
+![warning sign in](/static/photos/warning-need-to-signin.png)
+
+    - when the user sign in or sign out or sign up
+
+![warning sign in out](/static/photos/warning-signout.png)
+
+
+    
+
 ### bottom of the page
 
 various social links 
