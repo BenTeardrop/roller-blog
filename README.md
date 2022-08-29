@@ -173,7 +173,7 @@ i have manualy manually and automatically tested this project by doing the follo
 ![css checker](/static/photos/Css-checker.png)
 
 
-    - pep8
+    - pep8: Checked all python code and all is right
 
 
 
