@@ -7,7 +7,7 @@ from django.views.generic.edit import CreateView
 
 
 class PostList(generic.ListView):
-    model = Post 
+    model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 5
@@ -54,7 +54,6 @@ class PostDetail(View):
         else:
             comment_form = CommentForm()
 
-
         return render(
             request,
             'post_detail.html',
@@ -76,7 +75,6 @@ class CreatePost(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
 
 
 class PostLike(View):
@@ -114,7 +112,6 @@ class CreateReview(View):
         else:
             review_form = CreateReviewForm()
 
-
         return render(
             request,
             'reviews.html',
@@ -123,5 +120,3 @@ class CreateReview(View):
                 "review_form": review_form
             },
         )
-
-

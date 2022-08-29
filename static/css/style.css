@@ -9,6 +9,10 @@ body {
     color: #23a5d2;
 }
 
+.card-img-top {
+    height: 75%;
+}
+
 
 .nav-link {
     color: #23a5d2;

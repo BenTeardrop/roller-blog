@@ -21,7 +21,6 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email_address', 'body')
     actions = ['approve_comments']
 
-
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
