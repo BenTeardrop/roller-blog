@@ -109,7 +109,7 @@ the user can then choose a title for there post a text content and an image and 
 ### blog post detail
 
 ![post detail page](/static/photos/post-detail-part-1.png)
-![post detail page](/static/photos/post-detail-part-2.png)
+![post detail page](/static/photos/post-detail-part2.png)
 
 
 - each blog post is a link to the post detail page where you can read more about the post, like it with a thumbs up and commment on it as well.
